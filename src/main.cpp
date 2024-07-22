@@ -8,18 +8,6 @@ using namespace cocos2d;
 auto director = CCDirector::sharedDirector();
 auto winSize = director->getWinSize();
 
-//stole this from wylie who stole this from mat
-void clipboardText(const char* text) {
-    if (!OpenClipboard(NULL)) return;
-    if (!EmptyClipboard()) return;
-    auto len = std::strlen(text);
-    auto mem = GlobalAlloc(GMEM_MOVEABLE, len + 1);
-    memcpy(GlobalLock(mem), text, len + 1);
-    GlobalUnlock(mem);
-    SetClipboardData(CF_TEXT, mem);
-    CloseClipboard();
-}
-
 class $modify(CODEBREAK_Layer, SecretLayer2) {
 	bool init() {
 		if (!SecretLayer2::init()) {
@@ -48,6 +36,6 @@ class $modify(CODEBREAK_Layer, SecretLayer2) {
 		auto code = "The <cr>Cod3Breaker</c> code is: <cy>" + std::to_string(GM->m_secretNumber * -1);
 		FLAlertLayer::create("Cod3breaker", code, "OK")->show();
 
-		clipboardText(std::to_string(GM->m_secretNumber * -1).c_str());
+		geode::utils::clipboard::write(std::to_string(GM->m_secretNumber * -1));
 	}
 };
