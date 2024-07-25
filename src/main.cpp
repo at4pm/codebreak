@@ -1,6 +1,5 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/SecretLayer2.hpp>
-#include <windows.h>
 #include <string>
 
 using namespace cocos2d;
