@@ -7,10 +7,10 @@
 	},
 	"id": "ata.codebreak",
 	"name": "Codebreak",
-	"version": "v1.0.5",
+	"version": "v1.0.6",
 	"developer": "ata",
 	"description": "A 2.206 Geode port of Wyliemaster's Cod3breaker mod",
 	"links": {
-		"source": "https://github.com/at4pm/codebreaker/"
+		"source": "https://github.com/at4pm/codebreak/"
 	}
 }
